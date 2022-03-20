@@ -184,7 +184,10 @@ customers = []
 # Since its a queue, the restaurant will prepare the meals starting at the beggining of the list.
 # After a few minutes, the first 2 orders are ready. Go ahead and remove the first 2 customers
 # from the queue. You also want to display the name of the customers whose order is ready in the 
-# restaurant's screen so the customers can see if their order is ready. 
+# restaurant's screen so the customers can see if their order is ready. Write your code below.
+
+
+
 
 ```
 
@@ -214,6 +217,55 @@ class Queue:
         """
         Dequeue from the queue.
         """
+        value = self.queue[0]
+        del self.queue[0]
+        return value
+
+```
+
+
+## SOLUTION
+
+```
+#PROBLEM 1
+
+customers.append(Mike)
+customers.append(Joseph)
+customers.append(Rachel)
+customers.append(Andrew)
+
+
+
+#PROBLEM 2
+print(customers.pop(0))
+print(customers.pop(0))
+
+
+
+#PROBLEM 3
+
+class Queue:
+
+    def __init__(self):
+        """
+        Initialize queue.  
+        """
+        self.queue = []
+
+    def enqueue(self, value):
+        """
+        Enqueue the new value
+        """
+        self.queue.append(value)
+
+    def dequeue(self):
+        """
+        Dequeue from the queue.
+        """
+        if len(self.queue) <= 0:
+            print("Queue is empty.")
+            return
+
         value = self.queue[0]
         del self.queue[0]
         return value
