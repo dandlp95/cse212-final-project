@@ -57,7 +57,45 @@
             self.head = None
             self.tail = None
 
-
 ```
 
 
+**Create a function to remove at the head for the class above:**
+
+```
+
+    def remove_head(self):
+
+        elif self.head != self.tail:
+            self.head.next.prev = None
+            self.head = self.head.next  
+
+        else:
+            self.head = None
+            self.tail = None
+
+        
+```
+
+**Our class is far from done. But we can start using it for operations at both ends of the list**
+
+
+```
+
+# Create an instance of the class you made above and initialize it with a list of the following values: "Peter", "John", "Daniel" in that order:
+
+linked_list = LinkedList()
+linked_list.insert_tail("Peter")
+linked_list.insert_head("John")
+linked_list.insert_tail("Daniel")
+
+
+
+# Remove Daniel from the list:
+linked_list.remove_tail()
+
+
+# Remove Peter from the list:
+linked_list.remove_head()
+
+```
