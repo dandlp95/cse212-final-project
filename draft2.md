@@ -188,3 +188,194 @@ This last process can be confusing, so here is an example. Carefully read the co
 2.  Change the previous pointer of the node after the node you are trying to remove, so that it points to the node before the node you are trying to remove.
 
 So, as you can see, removing nodes from a linked list is as simple as altering the pointers of the objects.
+
+## LINKED LISTS USING DEQUE
+
+Now that we saw how linked lists work using custome classes, now let's try the deque class from the collections library.
+
+First things first, we need to import the class, and then initialize an instance of it:
+
+```
+
+from collections import deque
+
+linked_list = deque([1,2,3])
+
+print(linked_list) # This will print [1,2,3]
+
+```
+
+**append()**
+
+We use the append method to add at the tail.
+
+```
+
+linked_list.append(4)
+
+print(linked_list) # Our linked list will now print [1,2,3,4]
+
+```
+
+**appendleft()**
+
+We use the appendleft method to add at the head. 
+
+```
+
+linked_list.appendleft(0)
+
+print(linked_list) # Our linked list will now print [0,1,2,3,4]
+
+```
+
+**pop()**
+
+We use the pop method to remove at the tail. This would be similar to the remove_tail method we used.
+
+```
+
+linked_list.pop()
+
+print(linked_list) # Our linked list will now print [0,1,2,3]
+
+```
+
+**popleft()**
+
+We use the popleft method to remove at the head. This would be similar to the remove_head method we wrote earlier.
+
+```
+
+linked_list.popleft(0)
+
+print(linked_list) # Our linked list will now print [1,2,3]
+
+```
+
+**insert(i, value)**
+
+This method inserts a value after the  node "i." This would be similar to the insert_afer method we wrote earlier.
+
+```
+
+linked_list.insert(0, 1.5)
+
+print(linked_list) # Our linked list will now print [1,1.5,2,3,4]
+
+```
+
+**pop(i) or del**
+
+This method removes the "i" node. This would be similar to the removing from the middle.
+
+```
+
+# By default, pop will remove the last value in the list. So, we have to specify the node to remove from the middle.
+linked_list.pop(1)
+
+print(linked_list) # Our linked list will now print [1,2,3]
+
+```
+
+**PROBLEM**
+
+We'll use the class below for the activity
+
+```
+class LinkedList:
+
+    class Node:
+
+        self.value = value
+        self.next = None
+        self.prev = None
+    
+    def __init__(self):
+
+        self.head = None
+        self.tail = None
+
+```
+
+Hint: In order to create a node, remember that Node is a child class to LinkedList. Therefore, you would need to type LinkedList.Node(value)
+
+**Create a function to insert at the head for the class above:**
+
+```
+# Insert your code here:
+
+
+
+
+
+
+```
+
+**Create a function to insert at the tail for the class above:**
+
+```
+# Insert your code here:
+
+
+
+
+
+
+```
+**Create a function to remove at the tail for the class above:**
+
+
+
+```
+
+# Insert your code here:
+
+
+
+
+
+
+
+```
+
+
+**Create a function to remove at the head for the class above:**
+
+
+```
+# Insert your code here:
+
+
+
+
+
+
+
+```
+
+
+
+**Our class is far from done. But we can start using it for operations at both ends of the list**
+
+
+Follow the instructions: 
+
+```
+# Create an instance of the class you made above and initialize it with a list of the following values: "Peter", "John", "Daniel" :
+
+
+
+# Remove Daniel from the list:
+
+
+
+
+# Remove Peter from the list:
+
+
+
+
+```
+
+[See solution here](draft2-solution.md)
