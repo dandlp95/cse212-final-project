@@ -5,14 +5,17 @@ operations performed in both ends of the list. However, in order to find a speci
 the list, every single node has to be iterated. This makes our lists have an O(n) efficiency
 for those types of operations.
 
-## WHAT ARE THEY
+**What are they**
 
 An improvement we can make for those types of operations are tree data structures. Trees are
 technically still linked lists. You still have objects (nodes) pointing at other objects. In trees,
 though, each node can be pointing at multiple objects and are typically organized in a hierarchical
 manner. 
 
-The most common type of tree data structures are binary trees.
+The most common type of tree data structures are binary trees. In binary trees, nodes point at only
+2 nodes at a time. Below is a binary search tree, a highly efficient version of a binary tree:
+
+[ IMAGE HERE ]
 
 ## WHY ARE THEY USEFUL
 
@@ -50,7 +53,18 @@ you will start. It is the element on top of the tree.
 4. Leaf nodes: These are nodes that do not point towards any nodes lower in the hierarchy.
 5. Subtrees: When you grab a node in the tree, you can think of it as the upmost node in relation of all the
 nodes that are beneath it. In this sense, that node along with the nodes beneath it form a subtree.  
+6. Height. Refers to how many nodes deep the tree is, starting at the root node.
 
+
+[ IMAGE HERE ]
+
+## EFFICIENCY
+
+Binarytrees can be highly efficient, because with each iteration, you're ideally splitting the tree in halves.
+This goes back to go the book example from earlier. It doesn't matter if the book is 100 pages or 1000 pages. The 
+time it will take us to find an specific page will be similar as long as the page numbers are properly sorted. So,
+while the efficiency of iterating a regular list is linear or O(n), the efficiency of finding a specific value in a 
+balanced search tree is O(log n).
 
 ## BINARY SEARCH TREES
 
@@ -62,16 +76,8 @@ it is sent to the left subtree. Then, the data is compared the same way with the
 and so on, until an empty place in the tree is found. If duplicate data is inserted into the tree, it can be inserted
 either at the right or the left side of the dupliate data.
 
-## EFFICIENCY
 
-Binary search trees are highly efficient, because with each iteration, you're ideally splitting the tree in halves.
-This goes back to go the book example from earlier. It doesn't matter if the book is 100 pages or 1000 pages. The 
-time it will take us to find an specific page will be similar as long as the page numbers are properly sorted. So,
-while the efficiency of iterating a regular list is linear or O(n), the efficiency of finding a specific value in a 
-balanced search tree is O(log n).
-
-
-## BALANCED BINARY SEARCH TREES
+**Balancing Search Trees**
 
 Unfortunately, binary search trees aren't necessarily efficient by default. Worst case scenarios happen. Let's say that
 you had 10 values added to your search tree, and each value was smaller than the previous one. Eventually, your tree would look something like this:
@@ -90,7 +96,44 @@ approximately the same amount of subtrees on each side. This is what a balanced 
 [IMAGE OF BALANCED SEARCH TREE HERE]
 
 
-## EFFICIENCY OF BINARY SEARCH TREES
+While the example above is an unlikely scenario, it is also unlikely to expect that our tree will be balanced by default as
+we keep entering data. So, you can implement special algorithms that will make sure our trees remain balanced. The 2 most 
+popular methods are the **AVL algorithm** and **Red Black Trees**.
 
+**AVL alogorithm**
+
+The AVL algorithms ensures that one side's subtree is never more than 1 node higher than the other side's subtree counterpart.
+For instance, the tree below is balanced because the left subtree is only one node deeper than the right tree.
+
+[ IMAGE HERE ]
+
+
+The tree below is not balanced because it is 2 nodes deeper:
+
+[ IMAGE HERE ]
+
+
+AVL trees fix this issue by detecting these unbalances and perform 1 or 2 rotations to fix this issue. In the tree above, 
+the highlighted subtree became unbalance when the node colored in red was added. We can balance the tree by performing a
+rotation: 
+
+[ IMAGE HERE ]
+
+
+Now our tree is balanced and can keep getting benefitted from O(log n) efficiency when searching for specific data.
+
+
+## BINARY SEARCH TREES OPERATIONS
+
+Operations in binary search trees are often performed through recurssion. Which means, we'll divide a big problem in 
+a smaller version of that problem, which we'll repeat until a condition known as the base case is met.
+
+As with most data structures, some of the most common operations to perform will be **inserting**, **removing**, 
+**checking if certain data exists in the tree**, **Iterating through each value**(trasversing.) In addition, we can
+also check the height of the tree or one of its subtrees. 
+
+**Inserting**
+
+Inserting is implemented trough recursion.
 
 
