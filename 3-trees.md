@@ -133,6 +133,82 @@ also check the height of the tree or one of its subtrees.
 
 **Inserting**
 
-Inserting is implemented trough recursion.
+Inserting is implemented trough recursion. Performance is O(log n) because it does not have to visit every value in the
+tree to find a place to be inserted. Remember every iteration splits the results in roughly half.
 
+**Removing**
+
+Similar to inserting. Performance is O(log n) as well. Also implemented through recursion.
+
+**Checking if certain data exists in the tree**
+
+Implemented through recursion as well. Performance is ideally O(log n).
+
+**Iterating each value (trasversing)**
+
+Since you are visiting each value, the performance will be linear. Implemented through recursion as well. 
+
+## PROBLEMS
+
+Since trees are implemented as linked lists in Python, the following syntax should be familiar.
+
+
+```
+
+
+class Binary_Trees:
+
+    class Node:
+
+        def __init__(self, value):
+
+            self.value = value
+            self.left = None # Remember we put the node with lower value in the left side
+            self.right = None # Nodes with a higher value go to the right
+    
+    def __init__(self):
+
+        self.root = None # Not having a root node would mean the tree is empty. Think of it as the head of linked lists.
+    
+    def insert(self, data):
+        """
+        This function will insert data into the tree. As you can see, it will the self._insert private function
+        if the tree is not empty.
+        """
+        if self.root is None:
+            self.root = BST.Node(data)
+        else:
+            self._insert(data, self.root) 
+
+
+```
+
+## Problem 1
+
+```
+# Finish the second half  of the _insert function.
+
+    def _insert(self, value, node):
+        """
+        This function will look for a place to insert a node
+        with 'data' inside of it.  The current sub-tree is
+        represented by 'node'.  This function is intended to be
+        called the first time by the insert function.
+        """
+        if value < node.value:
+            
+            if node.left is None:
+               
+                node.left = BST.Node(value)
+            else:
+
+                self._insert(value, node.left)
+
+        elif value > node.value:
+
+            # Add cour code here.
+
+```
+
+[See solution here](trees-solution.py)
 
