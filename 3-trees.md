@@ -15,9 +15,10 @@ manner.
 The most common type of tree data structures are binary trees. In binary trees, nodes point at only
 2 nodes at a time. Below is a binary search tree, a highly efficient version of a binary tree:
 
-[ IMAGE HERE ]
+![](search-binary-tree.jpg)
 
-## WHY ARE THEY USEFUL
+
+**Why are the useful**
 
 With regular linked lists, there is typically not hierarchical order. This is not a big deal when 
 all we do is grabbing or adding nodes at the beggining or end of the list. However, when retrieving
@@ -82,7 +83,7 @@ either at the right or the left side of the dupliate data.
 Unfortunately, binary search trees aren't necessarily efficient by default. Worst case scenarios happen. Let's say that
 you had 10 values added to your search tree, and each value was smaller than the previous one. Eventually, your tree would look something like this:
 
-[ IMAGE OF UNBALANCED BINARY SEARCH TREE HERE ]
+![](unbalanced-tree.jpg)
 
 
 As you can see, it now does not look much different than a regular linked list. This means that all the benefits that
@@ -91,10 +92,7 @@ one-by-one, instead of splitting  the tree in half with each comparison.
 
 To avoid this worst case scenario, we need to make sure our tree is balanced. A balanced tree, refers to a tree that is 
 symmetrical. In other words, it should have the same amount of subtrees on each side, and each subtree should also have
-approximately the same amount of subtrees on each side. This is what a balanced binary search tree would look like:
-
-[IMAGE OF BALANCED SEARCH TREE HERE]
-
+approximately the same amount of subtrees on each side.
 
 While the example above is an unlikely scenario, it is also unlikely to expect that our tree will be balanced by default as
 we keep entering data. So, you can implement special algorithms that will make sure our trees remain balanced. The 2 most 
@@ -105,19 +103,20 @@ popular methods are the **AVL algorithm** and **Red Black Trees**.
 The AVL algorithms ensures that one side's subtree is never more than 1 node higher than the other side's subtree counterpart.
 For instance, the tree below is balanced because the left subtree is only one node deeper than the right tree.
 
-[ IMAGE HERE ]
+![](balanced-example.jpg)
+
 
 
 The tree below is not balanced because it is 2 nodes deeper:
 
-[ IMAGE HERE ]
+![](unbalanced-tree-example.jpg)
 
 
 AVL trees fix this issue by detecting these unbalances and perform 1 or 2 rotations to fix this issue. In the tree above, 
 the highlighted subtree became unbalance when the node colored in red was added. We can balance the tree by performing a
 rotation: 
 
-[ IMAGE HERE ]
+![](rotation-tree.jpg)
 
 
 Now our tree is balanced and can keep getting benefitted from O(log n) efficiency when searching for specific data.

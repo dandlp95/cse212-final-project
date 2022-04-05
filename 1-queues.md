@@ -23,7 +23,7 @@ been in the queue first.
 Data strctures can often be represented in more than one way. In Python, Queues are often represented
 with lists or the dequeue library which is very easy to import. In this tutorial, we will review both.
 
-# QUEUES USING LISTS
+## QUEUES USING LISTS
 
 We start the queue by setting up a list:
 
@@ -57,7 +57,7 @@ item we added last, is at the end of the queue.
 
 ## DEQUEING
 
-### FIRST DEQUEING METHOD
+**First dequeing method**
 
 Since our queue is not empty anymore, let's go ahead and dequeue some items. Queues are "first in, first out" data structures.
 This means that whenever we want to remove an item, we always remove the item that has been in the queue the longest. 
@@ -89,7 +89,7 @@ print(queue.pop(0))
 ```
 
 
-### SECOND DEQUEING METHOD
+## SECOND DEQUEING METHOD
 
 Another way to remove things from the queue, is the del statement. To
 use it, simply add the del statement following by the array element you want to remove:
@@ -121,7 +121,7 @@ if len(queue) <= 0:
 # The rest of your code here...
 ```
 
-# QUEUES USING THE DEQUE LIBRARY
+## QUEUES USING THE DEQUE LIBRARY
 
 Python lists are not the most efficient way to implement queues. For example, when dealing with pop and append operations on the 
 left side of an array, every element to the right will need to be moved to the left if an item was removed or to the right to make
@@ -157,14 +157,14 @@ queue.popleft()
 # Now the queue will look like this: [item2]
 ```
 
-# EFFICIENCY
+## EFFICIENCY
 
 Using lists, enqueing is extremely efficient and has an efficiency of O(1) while dequeing has an efficiency of O(n)
 because when the first item in the array is removed, everything has to be pushed forward. 
 
 Dequeing or Enqueing is always O(1) using the deque class.
 
-# PROBLEM:
+## PROBLEM:
 
 ```
 customers = []
@@ -223,51 +223,4 @@ class Queue:
 
 ```
 
-
-## SOLUTION
-
-```
-#PROBLEM 1
-
-customers.append(Mike)
-customers.append(Joseph)
-customers.append(Rachel)
-customers.append(Andrew)
-
-
-
-#PROBLEM 2
-print(customers.pop(0))
-print(customers.pop(0))
-
-
-
-#PROBLEM 3
-
-class Queue:
-
-    def __init__(self):
-        """
-        Initialize queue.  
-        """
-        self.queue = []
-
-    def enqueue(self, value):
-        """
-        Enqueue the new value
-        """
-        self.queue.append(value)
-
-    def dequeue(self):
-        """
-        Dequeue from the queue.
-        """
-        if len(self.queue) <= 0:
-            print("Queue is empty.")
-            return
-
-        value = self.queue[0]
-        del self.queue[0]
-        return value
-
-```
+[Solution Here](queues-solution.py)

@@ -1,6 +1,19 @@
-**Create a function to insert at the head for the class above:**
+# Create a function to insert at the head for the class above:
 
-```
+class LinkedList:
+
+    class Node:
+
+        def __init__(self, value):
+
+            self.value = value
+            self.next = None
+            self.prev = None
+    
+    def __init__(self):
+
+        self.head = None
+        self.tail = None
 
     def insert_head(self, value):
 
@@ -16,11 +29,8 @@
             self.head = new_node      
 
 
-```
 
-**Create a function to insert at the tail for the class above:**
-
-```
+# Create a function to insert at the tail for the class above:
 
     def insert_tail(self, value):
 
@@ -38,12 +48,7 @@
             self.tail = new_node
             self.head = new_node
             
-
-```
-
-**Create a function to remove at the tail for the class above:**
-
-```
+# Create a function to remove at the tail for the class above:
 
     def remove_tail(self):
 
@@ -57,16 +62,12 @@
             self.head = None
             self.tail = None
 
-```
 
-
-**Create a function to remove at the head for the class above:**
-
-```
+# Create a function to remove at the head for the class above:
 
     def remove_head(self):
 
-        elif self.head != self.tail:
+        if self.head != self.tail:
             self.head.next.prev = None
             self.head = self.head.next  
 
@@ -75,12 +76,7 @@
             self.tail = None
 
         
-```
-
-**Our class is far from done. But we can start using it for operations at both ends of the list**
-
-
-```
+# Our class is far from done. But we can start using it for operations at both ends of the list
 
 # Create an instance of the class you made above and initialize it with a list of the following values: "Peter", "John", "Daniel" in that order:
 
@@ -98,4 +94,4 @@ linked_list.remove_tail()
 # Remove Peter from the list:
 linked_list.remove_head()
 
-```
+

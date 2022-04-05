@@ -48,8 +48,6 @@ Double linked lists is when nodes do not just point to the next node in the list
 node in the array. Basically they have 2 pointers and allows for more functionality, such as iterating each
 node in reverse. 
 
-## IMPLEMENTING LINKED LISTS IN PYTHON.
-
 ### CUSTOME LINKED LIST. 
 
 One way to implement linked lists in Python is through the deque class imported from the collections library as we 
@@ -378,4 +376,4 @@ Follow the instructions:
 
 ```
 
-[See solution here](draft2-solution.md)
+[See solution here](linked-lists-solutions.py)
