@@ -9,3 +9,6 @@ programmers should be familiar with them in order to use the right tools for the
 
 Read carefully through each tutorial, and try to imitate each example. At the end of the tutorial, 
 you will also find problems to help you practice the concepts you just learned. 
+
+**Name:** Daniel De La Pena Maldonado
+**Class:** CSE212 Data Structures
